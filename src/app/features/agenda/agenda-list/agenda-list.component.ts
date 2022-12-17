@@ -16,7 +16,7 @@ export class AgendaListComponent implements OnInit{
 
   constructor(private agendaService: AgendaService, private router: ActivatedRoute){}
   ngOnInit(): void {
-    this.sub = this.agendaService.getAgendas().subscribe(agendaListItem => this.agendaList = agendaListItem);
+    this.sub = this.agendaService.getAgenda().subscribe(agendaListItem => this.agendaList = agendaListItem);
 
     //verifico la presenza del messaggio nei query params
     this.router

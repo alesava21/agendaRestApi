@@ -17,12 +17,12 @@ export class AgendaService {
   constructor(private http: HttpClient) { }
 
   /** GET film from the server */
-  getAgendas(): Observable<Agenda[]> {
+  getAgenda(): Observable<Agenda[]> {
     return this.http.get<Agenda[]>(this.apiServer)
   }
 
   /** GET film by id. Will 404 if id not found */
-  getAgenda(id: number): Observable<Agenda> {
+  getAgendas(id: number): Observable<Agenda> {
     const url = `${this.apiServer}/${id}`;
     return this.http.get<Agenda>(url).pipe(
       tap(_ => console.log(`fetched Agenda id=${id}`)),

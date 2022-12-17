@@ -1,0 +1,46 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class='card'>
+            <div class='card-header'>
+                Visualizza dettaglio
+            </div>
+
+            <div class='card-body'>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Id:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda?.id}}</dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Descrizone:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda?.descrizione}}</dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Data Ora Inizio:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda?.dataOraInizio}}</dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Data Ora Fine:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda?.dataOraFine}}</dd>
+                </dl>
+
+                </div>
+
+                <!-- end card body -->
+            </div>
+
+            <div class='card-footer'>
+                <a routerLink="/agenda/list" class='btn btn-outline-secondary'
+                    style='width:80px'>
+                    <i class='fa fa-chevron-left'></i> Back
+                </a>
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+</main>

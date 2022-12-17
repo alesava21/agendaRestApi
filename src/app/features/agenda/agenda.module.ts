@@ -4,6 +4,7 @@ import { AgendaListComponent } from './agenda-list/agenda-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AgendaCreateComponent } from './agenda-create/agenda-create.component';
+import { AgendaDetailComponent } from './agenda-detail/agenda-detail.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
     path: 'create',
     component: AgendaCreateComponent
   },
+  {
+    path: ':id',
+    component: AgendaDetailComponent
+  },
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ]
 
@@ -21,6 +26,7 @@ const routes: Routes = [
   declarations: [
     AgendaListComponent,
     AgendaCreateComponent,
+    AgendaDetailComponent,
   ],
   imports: [
     CommonModule,
