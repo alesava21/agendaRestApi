@@ -1,42 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;" aria-label="Eighth navbar example">
-    <div class="container">
-        <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
-            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExample07">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="welcome">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
-                        aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown07">
-                        <li><a class="dropdown-item" href="">Home</a></li>
-                        <li><a class="dropdown-item" routerLink="regista/list">Ricerca
-                                Registi</a></li>
-                        <li><a class="dropdown-item" routerLink="regista/create">Inserisci
-                                Regista</a></li>
-                        <li><a class="dropdown-item" routerLink="film/list">Ricerca
-                                Film</a></li>
-                        <li><a class="dropdown-item" routerLink="film/create">Inserisci
-                                Film</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-3 text-end">
-            <!-- <p class="navbar-text" style="color: white">Utente: <a style="color: limegreen;">{{(authService.getUserLogged() | async)?.username}}</a>
-                <br><a href="" (click)="onClick()" style="color: white;">Logout</a>
-            </p> -->
-        </div>
-    </div>
-</nav>
+<div class="container">
+  <nav class="navbar">
+      <ul>
+          <li><a routerLink="error404">Home</a></li>
+          <li><a href="#about">Agenda List</a></li>
+          <li><a href="#service">Utenti List</a></li>
+          <li><a href="" (click)="onClick()">Logout</a></li>
+          <li><a style="color: white">Utente: <a style="color: skyblue;">{{(authService.getUserLogged() | async)?.username}}</a></a></li>
+        </ul>
+      </nav>
+</div>
