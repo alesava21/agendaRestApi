@@ -1,0 +1,77 @@
+<main class="flex-shrink-0">
+    <div class="container">
+
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+            {{errorMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Inserisci nuovo elemento</h5>
+            </div>
+            <div class='card-body'>
+
+                <form (ngSubmit)="save(agendaForm)" #agendaForm="ngForm" class="row g-3">
+
+                    <div class="col-md-6">
+                        <label>Descrizione<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Inserire la descrizione" required minlength="2"
+                            id="descrizione" name="descrizione" [(ngModel)]="agenda.descrizione" #descrizioneVar="ngModel"
+                            [ngClass]="{'is-invalid': (descrizioneVar.touched || descrizioneVar.dirty) && !descrizioneVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="descrizioneVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="descrizioneVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class=" col-md-3">
+                        <label>Data di inizio<span class="text-danger">*</span></label>
+                        <input type="datetime-local" class="form-control" placeholder="dd/MM/yyyy" required id="dataOraInizio"
+                            name="dataOraInizio" title="formato : gg/mm/aaaa" [(ngModel)]="agenda.dataOraInizio"
+                            #dataOraInizioVar="ngModel"
+                            [ngClass]="{'is-invalid': (dataOraInizioVar.touched || dataOraInizioVar.dirty) && !dataOraInizioVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="!dataOraInizioVar.valid">
+                                Il campo deve essere correttamente valorizzato
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class=" col-md-3">
+                        <label>Data di fine<span class="text-danger">*</span></label>
+                        <input type="datetime-local" class="form-control" placeholder="dd/MM/yyyy" required id="dataOraFine"
+                            name="dataOraFine" title="formato : gg/mm/aaaa" [(ngModel)]="agenda.dataOraFine"
+                            #dataOraFineVar="ngModel"
+                            [ngClass]="{'is-invalid': (dataOraFineVar.touched || dataOraFineVar.dirty) && !dataOraFineVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="!dataOraFineVar.valid">
+                                Il campo deve essere correttamente valorizzato
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" name="submit" value="submit" id="submit"
+                            class="btn btn-primary">Conferma</button>
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end container -->
+    </div>
+
+    <!-- end main -->
+</main>

@@ -1,0 +1,48 @@
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
+            {{confirmMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary" style="margin:5px" routerLink="/agenda/create">Add New</a>
+                <a class="btn btn-secondary " style="margin:5px" routerLink="/welcome">Torna alla home</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Descrizione</th>
+                                <th>Data inizio</th>
+                                <th>Data fine</th>
+                                <th>Creatore</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let agendaItem of agendaList" [routerLink]="['/agenda',agendaItem.id]">
+                                <td>{{agendaItem.id}}</td>
+                                <td>{{agendaItem.descrizione}}</td>
+                                <td>{{agendaItem.dataOraInizio}}</td>
+                                <td>{{agendaItem.dataOraFine}}</td>
+                                <td>{{agendaItem.utenteDTO?.username}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+    </div>
+
+</main>

@@ -2,7 +2,7 @@
   <nav class="navbar">
       <ul>
           <li><a routerLink="error404">Home</a></li>
-          <li><a href="#about">Agenda List</a></li>
+          <li><a routerLink="agenda/list">Agenda List</a></li>
           <li><a href="#service">Utenti List</a></li>
           <li><a href="" (click)="onClick()">Logout</a></li>
           <li><a style="color: white">Utente: <a style="color: skyblue;">{{(authService.getUserLogged() | async)?.username}}</a></a></li>

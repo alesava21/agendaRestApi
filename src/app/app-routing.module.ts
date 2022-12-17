@@ -10,6 +10,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'agenda',
+    loadChildren: () => import('./features/agenda/agenda.module').then(m => m.AgendaModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'login',
     loadChildren: () => import('./core/auth/auth.module').then(m => m.AuthModule)
   },
