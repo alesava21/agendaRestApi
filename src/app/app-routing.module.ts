@@ -7,9 +7,13 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () => import('./features/welcome/welcome.module').then(m => m.WelcomeModule),
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./core/auth/auth.module').then(m => m.AuthModule)
+  },
 
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-  { path: '**', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({
