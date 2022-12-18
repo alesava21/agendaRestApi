@@ -12,7 +12,7 @@ import { IsLoggedDirective } from './directives/is-logged.directive';
     CommonModule
   ],
   exports: [
-    IsLoggedDirective
+    IsLoggedDirective,
   ]
 })
 export class SharedModule { }

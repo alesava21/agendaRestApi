@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agenda } from 'src/app/model/agenda';
 import { AgendaService } from '../agenda.service';
@@ -20,7 +21,7 @@ export class AgendaDeleteComponent implements OnInit{
     .getAgendas(this.id).subscribe(agenda => this.selectedAgenda = agenda)
   }
 
-  delete(): void{
+  delete(agendaForm: NgForm): void{
     this.agendaService.delete(this.id).subscribe({
       next: agenda => this.selectedAgenda.id = this.id,
       complete: () => {
@@ -30,9 +31,9 @@ export class AgendaDeleteComponent implements OnInit{
     })
   }
 
-  onClick(): void {
-    this.redirect.navigate(['libro/list'])
-  }
+  // onClick(): void {
+  //   this.redirect.navigate(['libro/list'])
+  // }
 
 
 }

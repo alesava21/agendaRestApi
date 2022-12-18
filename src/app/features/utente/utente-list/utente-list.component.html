@@ -1,0 +1,52 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
+            {{confirmMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary " routerLink="/utente/create">Add New</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Data Creazione</th>
+                                <th>E-Mail</th>
+                                <th>Stato</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let filmItem of utenteLits" [routerLink]="['/utente',filmItem.id]" style="cursor: pointer;">
+                                <td>{{filmItem.id}}</td>
+                                <td>{{filmItem.username}}</td>
+                                <td>{{filmItem.nome}}</td>
+                                <td>{{filmItem.cognome}}</td>
+                                <td>{{filmItem.dateCreated | date:'yyyy/MM/dd'}}</td>
+                                <td>{{filmItem.email}}</td>
+                                <td>{{filmItem.stato}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+    </div>
+
+</main>
