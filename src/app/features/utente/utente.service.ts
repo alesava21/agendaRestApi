@@ -32,7 +32,7 @@ export class UtenteService {
   }
 
   /** POST: add a new regista to the server */
-  addFilm(filmInput: Utente): Observable<Utente> {
+  addUser(filmInput: Utente): Observable<Utente> {
     return this.http.post<Utente>(this.apiServer, filmInput, this.httpOptions).pipe(
       tap((newFilm: Utente) => console.log(`added film w/ id=${newFilm.id}`)),
       catchError(this.handleError<Utente>('addFilm'))

@@ -1,10 +1,10 @@
-export interface Utente {
-     id?: number;
-     username?: string;
-     nome?: string;
-     cognome?: string;
-     email?: string;
-     dateCreated?: Date;
-     stato?: string;
-     ruolo?: string;
+export class Utente {
+     public id?: number;
+     public username?: string;
+     public nome?: string;
+     public cognome?: string;
+     public email?: string;
+     public dateCreated?: Date;
+     public stato?: string;
+     public ruolo?: string;
 }
