@@ -16,7 +16,7 @@ export class AgendaService {
 
   constructor(private http: HttpClient) { }
 
-  /** GET film from the server */
+  /** GET Agenda from the server */
   getAgenda(): Observable<Agenda[]> {
     return this.http.get<Agenda[]>(this.apiServer)
   }
@@ -36,6 +36,13 @@ export class AgendaService {
       tap((newFilm: Agenda) => console.log(`added agenda w/ id=${newFilm.id}`)),
       catchError(this.handleError<Agenda>('addAgenda'))
     );
+  }
+
+  delete(id?:number): Observable<Agenda>{
+    return this.http.delete<Agenda>(this.apiServer + '/' + id, this.httpOptions).pipe(
+      tap((deleteAgenda: Agenda) => console.log(`added agenda w/ id=${deleteAgenda.id}`)),
+      catchError(this.handleError<Agenda>('deleteAgenda'))
+    )
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

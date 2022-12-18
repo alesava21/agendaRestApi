@@ -1,0 +1,32 @@
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class='card' *ngIf="selectedAgenda">
+            <div class='card-header'>
+                Dettaglio
+            </div>
+            <div class='card-body'>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Id:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda.id}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Titolo:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda.descrizione}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Numero pagine:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda.dataOraInizio}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Autore:</dt>
+                    <dd class="col-sm-9">{{selectedAgenda.dataOraFine}}</dd>
+                </dl>
+                <dl>
+                    <a><button class="btn btn-sm btn-outline-danger" (click)="delete()">Delete</button></a>
+                    <a routerLink="/libro/list"><button class="btn btn-sm btn-outline-secondary">Torna alla
+                            lista</button></a>
+                </dl>
+            </div>
+        </div>
+    </div>
+  </main>

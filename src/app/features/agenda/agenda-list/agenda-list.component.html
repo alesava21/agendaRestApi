@@ -30,12 +30,11 @@
                             <tr *ngFor="let agendaItem of agendaList" [routerLink]="['/agenda',agendaItem.id]">
                                 <td>{{agendaItem.id}}</td>
                                 <td>{{agendaItem.descrizione}}</td>
-                                <td>{{agendaItem.dataOraInizio }}</td>
+                                <td>{{agendaItem.dataOraInizio}}</td>
                                 <td>{{agendaItem.dataOraFine}}</td>
                                 <td>{{agendaItem.utenteDTO?.username}}</td>
                                 <td>
-                                    <a [routerLink]="['/libro/delete', agendaItem.id]" class="btn btn-sm btn-outline-danger" href="#">Elimina</a>
-                                    <a [routerLink]="['/libro/update', agendaItem.id]" class="btn btn-sm btn-outline-warning" href="#">Modifica</a>  
+                                    <a [routerLink]="['/agenda/delete', agendaItem.id]" class="btn btn-sm btn-outline-danger" href="#">Elimina</a>
                                 </td>
                             </tr>
                         </tbody>

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AgendaCreateComponent } from './agenda-create/agenda-create.component';
 import { AgendaDetailComponent } from './agenda-detail/agenda-detail.component';
+import { AgendaDeleteComponent } from './agenda-delete/agenda-delete.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,14 @@ const routes: Routes = [
   {
     path: 'create',
     component: AgendaCreateComponent
+  },
+  {
+    path: 'edit/:id',
+    component: AgendaCreateComponent
+  },
+  {
+    path: 'delete/:id',
+    component: AgendaDeleteComponent
   },
   {
     path: ':id',
@@ -27,6 +36,7 @@ const routes: Routes = [
     AgendaListComponent,
     AgendaCreateComponent,
     AgendaDetailComponent,
+    AgendaDeleteComponent,
   ],
   imports: [
     CommonModule,
