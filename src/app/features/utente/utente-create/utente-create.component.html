@@ -77,6 +77,22 @@
                             </span>
                         </span>
                     </div>
+
+                    <div class="col-md-6">
+                        <label>Password<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" placeholder="Inserire la password" required
+                            minlength="4" id="password" name="password" [(ngModel)]="utente.password"
+                            #passwordVar="ngModel"
+                            [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="passwordVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="EmailVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
                     
                     <div class="col-12">
                         <button type="submit" name="submit" value="submit" id="submit"

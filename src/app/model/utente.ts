@@ -2,6 +2,7 @@ export class Utente {
      public id?: number;
      public username?: string;
      public nome?: string;
+     public password?: string;
      public cognome?: string;
      public email?: string;
      public dateCreated?: Date;

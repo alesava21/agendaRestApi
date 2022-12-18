@@ -6,8 +6,6 @@
   </div>
   <form (ngSubmit)="onClick(loginForm)" #loginForm="ngForm" class="form-signin">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-        
-
           <div class="form-floating">
           <input type="text" name="username" class="form-control" id="inputUsername" [ngModel] placeholder="username" required
           #userVar="ngModel" [ngClass]="{'is-invalid': (userVar.touched || userVar.dirty) && !userVar.valid }">

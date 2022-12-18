@@ -31,7 +31,7 @@ export class UtenteCreateComponent implements OnInit {
         error: () => this.errorMessage = 'Attenzione! Inserimento fallito!',
         complete: () => {
             if (!this.errorMessage)
-              this.router.navigate([`agenda/list`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
+              this.router.navigate([`utente/list`], { queryParams: { confirmMessage: 'Operazione effettuata correttamente.' } })
           }
       });
     } else

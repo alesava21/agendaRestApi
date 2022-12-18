@@ -27,20 +27,20 @@
                     <dd class="col-sm-9">{{selectedUser?.cognome}}</dd>
                 </dl>
                 <dl class="row">
-                    <dt class="col-sm-3 text-right">Email:</dt>
-                    <dd class="col-sm-9">{{selectedUser?.email}}</dd>
-                </dl>
-                <dl class="row">
-                    <dt class="col-sm-3 text-right">Statp:</dt>
-                    <dd class="col-sm-9">{{selectedUser?.stato}}</dd>
-                </dl>
-
-                <dl class="row">
                     <dt class="col-sm-3 text-right">Data Creazione:</dt>
                     <dd class="col-sm-9">
                         {{selectedUser?.dateCreated | date:'dd/MM/yyyy'}}
                     </dd>
                 </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">Email:</dt>
+                    <dd class="col-sm-9">{{selectedUser?.email}}</dd>
+                </dl>
+                <dl class="row">
+                    <dt class="col-sm-3 text-right">stato:</dt>
+                    <dd class="col-sm-9">{{selectedUser?.stato}}</dd>
+                </dl>
+
 
                 <!-- end card body -->
             </div>
